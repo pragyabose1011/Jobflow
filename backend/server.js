@@ -29,7 +29,8 @@ app.set("trust proxy", 1)
 app.use(helmet())
 app.use(
   cors({
-    origin: ["http://localhost:5174", "https://indago-job.netlify.app"],
+    origin: ["http://localhost:5173", "https://job-tracking-web-appication.netlify.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token"],
     credentials: true,
   })
@@ -43,7 +44,7 @@ app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/jobs", authenticateUser, jobRouter)
 
 app.get("/", (req, res) => {
-  res.send("<h1> Indago-job-tracking-website API </h2>")
+  res.send("<h1> JobFlow-job-tracking-website API </h2>")
 })
 
 app.use(notFoundMiddleware)

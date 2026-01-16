@@ -64,10 +64,10 @@ const userSlice = createSlice({
         state.isLoading = true
       })
       .addCase(registerUser.fulfilled, (state, action) => {
-        const { user } = action.payload
+        const { user , token} = action.payload
         state.isLoading = false
         state.user = user
-        addUserToLocalStorage(user)
+        addUserToLocalStorage({user, token})
         toast.success(`Hello ${user.name}`)
       })
       .addCase(registerUser.rejected, (state, action) => {
@@ -81,7 +81,7 @@ const userSlice = createSlice({
         state.isLoading = true
       })
       .addCase(loginUser.fulfilled, (state, action) => {
-        const { user } = action.payload
+        const { user, token } = action.payload
         state.isLoading = false
         state.user = user
         addUserToLocalStorage(user)
@@ -99,7 +99,7 @@ const userSlice = createSlice({
         state.isLoading = true
       })
       .addCase(updateUser.fulfilled, (state, action) => {
-        const { user } = action.payload
+        const { user, token } = action.payload
         state.isLoading = false
         state.user = user
         addUserToLocalStorage(user)

@@ -9,7 +9,7 @@ const Sidebar = () => {
             {/* Logo title */}
             <div className=" mt-4 flex items-center justify-center space-x-2 ">
               <Logo className="h-8" />
-              <h3 className="text-3xl font-bold">Indago</h3>
+              <h3 className="text-3xl font-bold">JobFlow</h3>
             </div>
             {/* Menu items */}
             <div className=" mt-28 flex flex-col items-center justify-center space-y-10 capitalize ">

@@ -13,7 +13,7 @@ const Landing = () => {
               Job tracking tool for software engineers
             </h1>
             <p className="mb-6 max-w-2xl font-light text-gray-500 md:text-lg lg:mb-8 lg:text-xl">
-              Track your job search progress with Indago - Never miss an update
+              Track your job search progress with JobFlow - Never miss an update
               on your job application status.
             </p>
             <Link

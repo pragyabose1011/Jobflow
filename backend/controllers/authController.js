@@ -98,7 +98,7 @@ const uploadProfileImage = async (req, res) => {
   }
   const result = await cloudinary.uploader.upload(userAvatar.tempFilePath, {
     use_filename: true,
-    folder: "indago/users_avatar",
+    folder: "JobFlow/users_avatar",
   })
   // remove temporary image files from the server
   fs.unlinkSync(userAvatar.tempFilePath)

@@ -1,14 +1,14 @@
 import Logo from "../assets/Logo.png"
-const IndagoLogo = ({ className }) => {
+const JobFlowLogo = ({ className }) => {
   return (
     <>
       <img
         src={Logo}
-        alt="Indago, Job tracking web app"
+        alt="JobFlow, Job tracking web app"
         className={` ${className} object-cover mix-blend-multiply  `}
       />
     </>
   )
 }
 
-export default IndagoLogo
+export default JobFlowLogo

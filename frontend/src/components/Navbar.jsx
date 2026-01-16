@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="container mx-auto my-4 flex items-center justify-between py-2 px-4 ">
       <div className=" flex items-center space-x-2 ">
         <Logo className="h-8 " />
-        <h2 className="text-center text-3xl font-bold ">indago</h2>
+        <h2 className="text-center text-3xl font-bold ">JobFlow</h2>
       </div>
       <div className=" hidden md:flex md:space-x-8  ">
         <Link

@@ -8,9 +8,9 @@ export default defineConfig({
     react(),
     VitePWA({
       manifest: {
-        name: "Indago",
+        name: "JobFlow",
         categories: ["developer", "developer tools", "productivity"],
-        short_name: "Indago",
+        short_name: "JobFlow",
         start_url: "/",
         display: "standalone",
         scope: "./",
@@ -79,13 +79,13 @@ export default defineConfig({
         ],
         screenshots: [
           {
-            src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687759932/indago/Indago_oxu4uo.png",
+            
             sizes: "800x600",
             platform: "android",
             label: "Track your Job application status easily.",
           },
           {
-            src: "https://res.cloudinary.com/die12ywpb/image/upload/v1687662271/indago/Indago_03.b4983478_gjli9m.png",
+
             sizes: "800x600",
             platform: "android",
             label: "Track your Job application status easily.",

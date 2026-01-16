@@ -4,7 +4,7 @@ import { BadRequestError, NotFoundError } from "../errors/index.js"
 import moment from "moment"
 import mongoose from "mongoose"
 import fs from "fs"
-import { v2 as cloudinary } from "cloudinary"
+
 
 // * === === === === ===    CREATE JOB      === === === === === *
 const createJob = async (req, res) => {
@@ -162,7 +162,7 @@ const uploadImage = async (req, res) => {
   }
   const result = await cloudinary.uploader.upload(companyImage.tempFilePath, {
     use_filename: true,
-    folder: "indago/company_logo_images",
+    folder: "JobFlow/company_logo_images",
   })
   fs.unlinkSync(companyImage.tempFilePath) // remove temp image files from server
   res.status(StatusCodes.OK).json({ image: { src: result.secure_url } })
