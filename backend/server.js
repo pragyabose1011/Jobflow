@@ -29,9 +29,9 @@ app.set("trust proxy", 1)
 app.use(helmet())
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://job-tracking-web-appication.netlify.app"],
+    origin: ["http://localhost:5173", "http://localhost:5174", "https://job-tracking-web-appication.netlify.app"],  // Add 5173 if needed
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token"],
+    allowedHeaders: ["Content-Type", "Authorization", "x-csrf-token", "Accept"],  // Add Accept
     credentials: true,
   })
 )

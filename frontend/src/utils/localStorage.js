@@ -12,7 +12,17 @@ export const removeUserFromLocalStorage = () => {
 
 export const getUserFromLocalStorage = () => {
   const result = localStorage.getItem("user")
-  return result ? JSON.parse(result) : null
+  if (result) {
+    try {
+      return JSON.parse(result)
+    } catch (error) {
+      // If parsing fails, clear the invalid data and return null
+      localStorage.removeItem("user")
+      localStorage.removeItem("token")
+      return null
+    }
+  }
+  return null
 }
 
 export const getTokenFromLocalStorage = () => {

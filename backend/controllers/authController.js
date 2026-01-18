@@ -26,6 +26,7 @@ const register = async (req, res) => {
       email: user.email,
       location: user.location,
     },
+    token,
   })
 }
 // * === === === === === LOGIN USER === === === === === *
@@ -48,6 +49,7 @@ const login = async (req, res) => {
   user.password = undefined
   res.status(StatusCodes.OK).json({
     user,
+    token,
   })
 }
 
@@ -80,6 +82,7 @@ const updateUser = async (req, res) => {
   sendCookie({ res, token })
   res.status(StatusCodes.OK).json({
     user,
+    token,
   })
 }
 

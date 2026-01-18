@@ -6,6 +6,7 @@ import {
   addUserToLocalStorage,
   getUserFromLocalStorage,
   removeUserFromLocalStorage,
+  getTokenFromLocalStorage,
 } from "../../utils/localStorage"
 import {
   clearStoreThunk,
@@ -20,6 +21,7 @@ const initialState = {
   isLoading: false,
   uploadLoading: false,
   user: getUserFromLocalStorage(),
+  token: getTokenFromLocalStorage(),
 }
 
 //** ==================== Register User ==================== */
@@ -67,6 +69,7 @@ const userSlice = createSlice({
         const { user , token} = action.payload
         state.isLoading = false
         state.user = user
+        state.token = token
         addUserToLocalStorage({user, token})
         toast.success(`Hello ${user.name}`)
       })
@@ -84,7 +87,8 @@ const userSlice = createSlice({
         const { user, token } = action.payload
         state.isLoading = false
         state.user = user
-        addUserToLocalStorage(user)
+        state.token = token
+        addUserToLocalStorage({user, token})
         toast.success(`Welcome back ${user.name}`)
       })
       .addCase(loginUser.rejected, (state, action) => {
@@ -102,9 +106,10 @@ const userSlice = createSlice({
         const { user, token } = action.payload
         state.isLoading = false
         state.user = user
-        addUserToLocalStorage(user)
+        state.token = token
+        addUserToLocalStorage({user, token})
         toast.success("Save changes successfully")
-      })
+      })     
       .addCase(updateUser.rejected, (state, action) => {
         state.isLoading = false
         toast.error(
