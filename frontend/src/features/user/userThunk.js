@@ -41,8 +41,7 @@ export const uploadUserImageThunk = async (formData, thunkAPI) => {
         "Content-Type": "multipart/form-data",
       },
     })
-    thunkAPI.fulfillWithValue(response.data.image.src)
-    return response.data
+    return response.data  // Just return this
   } catch (error) {
     return checkForUnauthorizedResponse(error, thunkAPI)
   }

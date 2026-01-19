@@ -3,7 +3,7 @@ import { StatusCodes } from "http-status-codes"
 import { BadRequestError, UnauthenticatedError } from "../errors/index.js"
 import fs from "fs"
 import sendCookie from "../utils/sendCookie.js"
-
+import cloudinary from 'cloudinary'
 // * === === === === === REGISTER USER === === === === === *
 const register = async (req, res) => {
   const { name, email, password } = req.body

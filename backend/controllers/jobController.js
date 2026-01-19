@@ -4,7 +4,7 @@ import { BadRequestError, NotFoundError } from "../errors/index.js"
 import moment from "moment"
 import mongoose from "mongoose"
 import fs from "fs"
-
+import cloudinary from 'cloudinary'
 
 // * === === === === ===    CREATE JOB      === === === === === *
 const createJob = async (req, res) => {
